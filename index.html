@@ -1,109 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado Chironomids</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-error": "#450900",
+                "on-secondary": "#410f00",
+                "primary": "#f3ffca",
+                "on-tertiary-fixed": "#483d00",
+                "on-tertiary-container": "#5d5000",
+                "primary-container": "#cafd00",
+                "inverse-surface": "#fcf9f8",
+                "surface-dim": "#0e0e0e",
+                "surface-container-low": "#131313",
+                "secondary-fixed": "#ffc4b1",
+                "on-secondary-fixed-variant": "#932d00",
+                "secondary-fixed-dim": "#ffb197",
+                "surface-bright": "#2c2c2c",
+                "tertiary-dim": "#edd13a",
+                "background": "#0e0e0e",
+                "secondary": "#ff7441",
+                "on-tertiary": "#665800",
+                "inverse-on-surface": "#565555",
+                "on-background": "#ffffff",
+                "on-primary-container": "#4a5e00",
+                "surface-container": "#1a1a1a",
+                "on-secondary-container": "#fff6f3",
+                "primary-fixed-dim": "#beee00",
+                "surface-variant": "#262626",
+                "surface-container-high": "#20201f",
+                "on-primary-fixed-variant": "#526900",
+                "on-primary-fixed": "#3a4a00",
+                "on-error-container": "#ffd2c8",
+                "surface-container-highest": "#262626",
+                "inverse-primary": "#516700",
+                "on-primary": "#516700",
+                "outline-variant": "#484847",
+                "error": "#ff7351",
+                "on-secondary-fixed": "#631b00",
+                "error-dim": "#d53d18",
+                "surface": "#0e0e0e",
+                "error-container": "#b92902",
+                "on-surface-variant": "#adaaaa",
+                "tertiary-fixed-dim": "#edd13a",
+                "on-surface": "#ffffff",
+                "surface-container-lowest": "#000000",
+                "tertiary-fixed": "#fce047",
+                "secondary-dim": "#ff7441",
+                "tertiary": "#ffeea5",
+                "on-tertiary-fixed-variant": "#685900",
+                "secondary-container": "#ab3600",
+                "outline": "#767575",
+                "primary-fixed": "#cafd00",
+                "surface-tint": "#f3ffca",
+                "tertiary-container": "#fce047",
+                "primary-dim": "#beee00"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Space Grotesk"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+            },
+          },
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        
+        .spec-grid {
+            background-image: radial-gradient(circle, #484847 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+    </style>
+<style>
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-        
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-        
-        .card p {
-            margin-bottom: 1rem;
-        }
-        
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 3rem;
+          min-height: max(884px, 100dvh);
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>🌊 Colorado Chironomids</h1>
-        <p>Exploring the Aquatic Insects of Colorado</p>
-    </header>
-    
-    <main>
-        <div class="card">
-            <h2>Welcome</h2>
-            <p>Colorado Chironomids is dedicated to the study and documentation of midges (Chironomidae) found in Colorado's aquatic ecosystems.</p>
-            <p>Chironomids are incredibly important indicators of water quality and play a vital role in aquatic food webs throughout the state.</p>
-        </div>
-        
-        <div class="card">
-            <h2>About Chironomids</h2>
-            <p>Chironomidae, commonly known as midges or non-biting midges, are a family of insects closely related to mosquitoes. However, unlike their cousins, adult chironomids do not bite.</p>
-            <p>These insects are found in nearly every aquatic habitat and are essential food sources for fish and other aquatic organisms.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Colorado's Waterways</h2>
-            <p>Colorado's diverse aquatic ecosystems—from mountain streams to high-altitude lakes—support a remarkable diversity of chironomid species.</p>
-            <p>This project aims to document and study these fascinating insects across the state.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Get Started</h2>
-            <p>Explore the repository to learn more about Colorado's chironomid fauna. Check back soon for species profiles, research data, and more!</p>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Colorado Chironomids. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex items-center justify-between px-6 h-16 bg-[#0e0e0e] border-b border-[#484847]/15 z-50">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#f3ffca] hover:bg-[#20201f] transition-colors duration-200 p-2 active:scale-95 transition-transform">menu</button>
+<span class="text-xl font-black tracking-tighter text-[#f3ffca] font-headline uppercase">CHIRONOMID_CO</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#f3ffca] hover:bg-[#20201f] transition-colors duration-200 p-2 active:scale-95 transition-transform">shopping_cart</button>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section -->
+<section class="relative h-[618px] flex items-center justify-start px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Macro detail of authentic Colorado midges" class="w-full h-full object-cover opacity-30 grayscale" src="https://lh3.googleusercontent.com/aida/ADBb0ujUdvykCax9MT5GsGLz7hLhrOMU0jz8o2EntBT3U3AjdC4t8Rco3xwzHwUFZjcig_yjbv6Ix2urgObpyZTvr-9ZHI_aOVbL7wALNB4K1A1n83IPQB2drLnvHNklzn8-92klZm-4KcQ3NCK-N70fuZGlcZfWoIXXazqjXufKII6XgYNeuO3g2UkRwhguXPWN2NjKxAN9eNYEWTQaLlZK1mYNmp6zvHLX_MOs3FjCDwx-CUxc94Jel3b4VfVNLqeN0Ptg4TmyJaI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-block bg-primary text-on-primary px-3 py-1 font-label text-[10px] font-bold tracking-[0.2em] uppercase mb-6">GUIDE SPECIFICATION</div>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-background leading-none tracking-tighter mb-6">
+                THE COLORADO <br/>
+<span class="text-primary">COLLECTION</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-md border-l-2 border-primary pl-6 py-2">
+                Engineered for Trophy Trout. Precision midge patterns developed for the technical tailwaters and high-altitude lakes of the Rockies.
+            </p>
+</div>
+</section>
+<!-- Product Listing: Chiron-Midge -->
+<section class="px-6 py-20 bg-surface-container-low">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Gallery -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="col-span-2 aspect-square bg-black border border-outline-variant/15 overflow-hidden flex items-center justify-center">
+<!-- Rotating the fly in vise to appear vertical -->
+<img alt="Authentic fly in vise" class="w-full h-full object-contain scale-125 -rotate-[45deg]" src="https://lh3.googleusercontent.com/aida/ADBb0ug9kqs5foPrBp83d44lEbHDu1uuAq8rYWC7hrDmVfQi0xuoQQO6NVfX5tYFy0zCiC4Xx9B7qusAasoFrAsjI6NRJwx74xIbCj6Y9DjjKzwOtayTfrcYfxm9svp6psWnRqtsAwI4Xkw2UuPe7J9tbbHhWqv6G1PmQMOZ6MbsORHJ7WbzMyxdSBPrVi6446Q0DzsAE7VA7SEQKQtryL3WS8ldY6bnH62iIwGnSAwxLdQ2cFWpfzFbsTIIu06fJ_-h5Ov4cSxlZmM"/>
+</div>
+<div class="aspect-square bg-black border border-outline-variant/15 overflow-hidden">
+<img alt="Authentic midge pattern" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhn-U9VCJlEENLJqQC0sJjCPuElyCjTiRGzxfpqVjARzZfQJI6djQjY7wDRQpuxOhbOJZULRADma8StFkdPNlx32z_yJXHLJRPhhcHr8KnoJK3wshcj5RTAMqYGXlNkw-o06YXfsJKtHvEs2uNIxpWYtf4c0RDVky0Lg_2N316ddLFy1ePN5qg7ONICJrix-x011DwcAp72fVDFCIe_zIS-OhZY9269Z2lwewCQ7ifQL7_icQstCtq-Exo6-wuD65b8hADNzA"/>
+</div>
+<div class="aspect-square bg-black border border-outline-variant/15 overflow-hidden">
+<img alt="Authentic midge pattern close up" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujvlR1Rk7LddOhjxhmJq3m5MuHqYohVDd42gF6DbuZvMQPZ4fpY8z0HqwdOFjhsyUsNkG3HYmmVUHNfum27jhKjpaP6BO1xbbuzOF3gsNBhpjq6nr6esxRKdyFoaQ_Dquwg-0IYyTUIl8Q-3ziFsyymX5-aBjQAXIL45zA08RwoZS3KK5QKmPMueTk6GW3FcFrAk2UxAUsBoGtVEuAm3VPwMsP6-TwZIgh6NLVERPmByk4r_AAjKC-SU_Gu-ifrInCh-4U49lw"/>
+</div>
+</div>
+<!-- Info -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<div>
+<span class="font-label text-secondary text-sm font-bold tracking-widest uppercase mb-2 block">NEW ARRIVAL // CHIRONOMIDAE</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2">CHIRONO-MIDGE</h2>
+<div class="text-3xl font-headline font-light text-primary tracking-tighter">$20.00 <span class="text-sm font-label text-on-surface-variant ml-2 uppercase tracking-normal">Set of 5 Flies</span></div>
+</div>
+<div class="space-y-6">
+<div class="space-y-4">
+<label class="font-label text-xs font-bold text-on-surface-variant tracking-[0.1em] uppercase block">Pattern Selection</label>
+<div class="flex gap-4">
+<button class="flex-1 bg-surface-container-highest border-2 border-primary px-4 py-3 text-left transition-all">
+<span class="font-headline font-bold text-primary block">ZEBRA / BLACK</span>
+<span class="font-body text-[10px] text-on-surface-variant uppercase">Tactical Obsidian</span>
+</button>
+<button class="flex-1 bg-surface-container-high border-2 border-transparent hover:border-outline px-4 py-3 text-left transition-all">
+<span class="font-headline font-bold text-on-surface block">OLIVE</span>
+<span class="font-body text-[10px] text-on-surface-variant uppercase">Bio-Mimetic</span>
+</button>
+</div>
+</div>
+<div class="p-6 bg-surface border border-outline-variant/20 space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<span class="font-label text-xs font-medium uppercase tracking-tight">Standard Issue: Size 14-18</span>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline font-black py-5 uppercase tracking-widest hover:bg-primary-dim transition-colors active:scale-95 transition-transform">
+                            INITIALIZE PURCHASE
+                        </button>
+</div>
+</div>
+<!-- Technical Specs Rail -->
+<div class="spec-grid p-8 border border-outline-variant/10">
+<h3 class="font-headline text-sm font-black uppercase tracking-[0.2em] mb-6 border-b border-primary/30 pb-2">TECHNICAL_SPECS</h3>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">HOOK SYSTEM</span>
+<span class="font-headline text-lg font-medium">2x Heavy Hooks</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">EXTERIOR SHELL</span>
+<span class="font-headline text-lg font-medium">Solarez Resin</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">SINK RATE</span>
+<span class="font-headline text-lg font-medium">Fast / Tactical</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">TEST STATUS</span>
+<span class="font-headline text-lg font-medium">Guide Tested</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tested on Sacred Water -->
+<section class="px-6 py-24 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+<span class="text-[12rem] font-headline font-black tracking-tighter leading-none select-none uppercase">Stillwater</span>
+</div>
+<div class="max-w-4xl mx-auto text-center mb-16 relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">TESTED ON SACRED WATER</h2>
+<div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+<p class="font-body text-on-surface-variant max-w-2xl mx-auto">
+                These patterns weren't designed in a vacuum. They were forged in the crucible of Colorado's most demanding trophy fisheries, where selective trout demand absolute perfection.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+<div class="group bg-surface p-8 border border-outline-variant/10 hover:border-primary transition-all">
+<span class="font-label text-[10px] text-primary tracking-widest block mb-4">01 // CO</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-2">SPINNEY</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase tracking-widest">Mountain Reservoir</p>
+</div>
+<div class="group bg-surface p-8 border border-outline-variant/10 hover:border-primary transition-all">
+<span class="font-label text-[10px] text-primary tracking-widest block mb-4">02 // CO</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-2">NORTH DELANEY</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase tracking-widest">High Plains Lake</p>
+</div>
+<div class="group bg-surface p-8 border border-outline-variant/10 hover:border-primary transition-all">
+<span class="font-label text-[10px] text-primary tracking-widest block mb-4">03 // CO</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-2">ANTERO</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase tracking-widest">Tactical Shallow</p>
+</div>
+<div class="group bg-surface p-8 border border-outline-variant/10 hover:border-primary transition-all">
+<span class="font-label text-[10px] text-primary tracking-widest block mb-4">04 // CO</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-2">11 MILE</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase tracking-widest">The Crucible</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-[0.3em] font-medium">
+                GUIDE VALIDATED: COLORADO STILLWATER LAKES
+            </p>
+</div>
+</section>
+<!-- Final CTA / Footer Tease -->
+<section class="bg-surface py-20 px-6 border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-6xl mx-auto">
+<div class="space-y-4 text-center md:text-left">
+<h3 class="font-headline text-3xl font-bold uppercase">READY FOR THE HATCH?</h3>
+<p class="font-body text-on-surface-variant">Secure your technical kit before the spring emergence.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-headline font-bold px-8 py-4 uppercase tracking-widest active:scale-95 transition-all">
+                    SHOP ALL PATTERNS
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#0e0e0e] border-t border-[#484847]/15 flex justify-around items-center px-4 pb-safe z-50">
+<button class="flex flex-col items-center justify-center text-[#f3ffca] border-t-2 border-[#f3ffca] pt-2 transition-colors active:opacity-80">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest uppercase mt-1">SHOP</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/40 pt-2 hover:text-white transition-colors active:opacity-80">
+<span class="material-symbols-outlined">import_contacts</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest uppercase mt-1">JOURNAL</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/40 pt-2 hover:text-white transition-colors active:opacity-80">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest uppercase mt-1">CART</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/40 pt-2 hover:text-white transition-colors active:opacity-80">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold tracking-widest uppercase mt-1">PROFILE</span>
+</button>
+</nav>
+</body></html>
